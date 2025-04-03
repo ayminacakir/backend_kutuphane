@@ -19,16 +19,11 @@ public class Categories {
     private Long id;
     private String name;
 
-    @OneToMany(mappedBy = "category")
+    @OneToMany(mappedBy = "categories")
     private List<Books> books;
-    public Categories() {
-    }
 
-    public Categories(Long id, String name, List<Books> books) {
-        this.id = id;
-        this.name = name;
-        this.books = books;
-    }
+
+
 
     public Long getId() {
         return id;
