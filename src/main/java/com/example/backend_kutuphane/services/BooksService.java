@@ -18,25 +18,27 @@ public class BooksService {
     public BooksService(BooksRepository booksRepository) {
         this.booksRepository = booksRepository;
     }
+
     public BooksDTO getBookById(Long id) {
         Books book = booksRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Book not found"));
         return new BooksDTO(book.getId(), book.getTitle(), book.getAuthor(),
-                book.getCategory().getName(), book.getState());
+                book.getCategories().getName(), book.getStates());
     }
+
     public List<BooksDTO> getAllBooks() {
         List<Books> books = booksRepository.findAll();
         return books.stream()
                 .map(book -> new BooksDTO(book.getId(), book.getTitle(), book.getAuthor(),
-                        book.getCategory().getName(), book.getState()))
+                        book.getCategories().getName(), book.getStates()))
                 .collect(Collectors.toList());
     }
 
     public List<BooksDTO> getBooksByStatus(States status) {
-        List<Books> books = booksRepository.findByStatus(status);
+        List<Books> books = booksRepository.findByStates(status);
         return books.stream()
                 .map(book -> new BooksDTO(book.getId(), book.getTitle(), book.getAuthor(),
-                        book.getCategory().getName(), book.getState()))
+                        book.getCategories().getName(), book.getStates()))
                 .collect(Collectors.toList());
     }
 
@@ -44,7 +46,7 @@ public class BooksService {
         List<Books> books = booksRepository.findByAuthorContainingIgnoreCase(author);
         return books.stream()
                 .map(book -> new BooksDTO(book.getId(), book.getTitle(), book.getAuthor(),
-                        book.getCategory().getName(), book.getState()))
+                        book.getCategories().getName(), book.getStates()))
                 .collect(Collectors.toList());
     }
 
@@ -57,8 +59,8 @@ public class BooksService {
                 .orElseThrow(() -> new RuntimeException("Book not found"));
         book.setTitle(updatedBook.getTitle());
         book.setAuthor(updatedBook.getAuthor());
-        book.setCategory(updatedBook.getCategory());
-        book.setState(updatedBook.getState());
+        book.setCategories(updatedBook.getCategories());
+        book.setStates(updatedBook.getStates());
         booksRepository.save(book);
     }
 

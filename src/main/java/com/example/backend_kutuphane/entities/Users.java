@@ -1,5 +1,6 @@
 package com.example.backend_kutuphane.entities;
 
+import com.example.backend_kutuphane.entities.enums.Roles;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
@@ -31,7 +32,7 @@ public class Users {
     private String password;
 
     @Enumerated(EnumType.STRING)
-    private Role role;
+    private Roles role;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Borrows> borrows;
