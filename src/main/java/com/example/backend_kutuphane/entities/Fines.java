@@ -6,20 +6,21 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
-@Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 @Entity
 public class Fines {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne
-    private Borrows borrow;
+    @ManyToOne
+    @JoinColumn(name = "user_id")  // User ile ilişkilendirme
+    private Users user;
 
-    private double amount;
     private boolean paid;
+
+
 }
