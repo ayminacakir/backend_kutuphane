@@ -25,5 +25,7 @@ public class Borrows {
     private Books book;
 
     private LocalDate borrowDate;
+    @Getter
     private LocalDate returnDate;
+
 }

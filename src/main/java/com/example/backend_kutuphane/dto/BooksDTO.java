@@ -18,12 +18,6 @@ public class BooksDTO {
     private String categoryName;
     private States state;
 
-    public BooksDTO(Long id, String title, String author, String categoryName,States state) {
-        this.id = id;
-        this.title = title;
-        this.author = author;
-        this.categoryName = categoryName;
-        this.state = state;
-    }
+
 }
 
