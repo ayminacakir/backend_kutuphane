@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# .gitignore dosyasına eklenmesi gereken satır:
+src/main/resources/application.properties
