@@ -19,5 +19,9 @@ public class BooksDTO {
     private States state;
 
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 }
 
