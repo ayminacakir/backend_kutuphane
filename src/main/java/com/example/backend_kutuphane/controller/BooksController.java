@@ -1,8 +1,8 @@
-package com.example.backend_kutuphane.controllers;
+package com.example.backend_kutuphane.controller;
 
 import com.example.backend_kutuphane.dto.BooksDTO;
-import com.example.backend_kutuphane.entities.Books;
-import com.example.backend_kutuphane.entities.enums.States;
+import com.example.backend_kutuphane.entity.Books;
+import com.example.backend_kutuphane.entity.enums.State;
 import com.example.backend_kutuphane.services.BooksService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -33,7 +33,7 @@ public class BooksController {
 
 
     @GetMapping("/status/{status}")
-    public ResponseEntity<List<BooksDTO>> getBooksByStatus(@PathVariable States status) {
+    public ResponseEntity<List<BooksDTO>> getBooksByStatus(@PathVariable State status) {
         return ResponseEntity.ok(booksService.getBooksByStatus(status));
     }
 

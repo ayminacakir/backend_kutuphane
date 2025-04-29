@@ -1,7 +1,7 @@
 package com.example.backend_kutuphane.repositories;
 
-import com.example.backend_kutuphane.entities.Fines;
-import com.example.backend_kutuphane.entities.Users;
+import com.example.backend_kutuphane.entity.Fines;
+import com.example.backend_kutuphane.entity.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 

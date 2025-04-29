@@ -1,6 +1,6 @@
-package com.example.backend_kutuphane.controllers;
+package com.example.backend_kutuphane.controller;
 
-import com.example.backend_kutuphane.entities.Categories;
+import com.example.backend_kutuphane.entity.Categories;
 import com.example.backend_kutuphane.services.CategoriesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -1,14 +1,12 @@
-package com.example.backend_kutuphane.entities;
+package com.example.backend_kutuphane.entity;
 
 
-import com.example.backend_kutuphane.entities.enums.States;
+import com.example.backend_kutuphane.entity.enums.State;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import javax.swing.plaf.nimbus.State;
 
 @Getter
 @Setter
@@ -24,7 +22,7 @@ public class Books {
     private int publicationYear;
 
     @Enumerated(EnumType.STRING)
-    private States states;
+    private State states;
 
     @ManyToOne
     @JoinColumn(name = "category_id")
@@ -36,10 +34,10 @@ public class Books {
     public void setId(Long id) {
         this.id = id;
     }
-    public States getStates() {
+    public State getStates() {
         return states;
     }
-    public void setStates(States states) {
+    public void setStates(State states) {
         this.states = states;
     }
     public Categories getCategories() {

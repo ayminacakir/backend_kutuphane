@@ -1,8 +1,8 @@
 package com.example.backend_kutuphane.services;
 
 import com.example.backend_kutuphane.dto.BooksDTO;
-import com.example.backend_kutuphane.entities.Books;
-import com.example.backend_kutuphane.entities.enums.States;
+import com.example.backend_kutuphane.entity.Books;
+import com.example.backend_kutuphane.entity.enums.State;
 import com.example.backend_kutuphane.repositories.BooksRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,7 +34,7 @@ public class BooksService {
                 .collect(Collectors.toList());
     }
 
-    public List<BooksDTO> getBooksByStatus(States status) {
+    public List<BooksDTO> getBooksByStatus(State status) {
         List<Books> books = booksRepository.findByStates(status);
         return books.stream()
                 .map(book -> new BooksDTO(book.getId(), book.getTitle(), book.getAuthor(),

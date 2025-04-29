@@ -1,9 +1,9 @@
-package com.example.backend_kutuphane.controllers;
+package com.example.backend_kutuphane.controller;
 
 import com.example.backend_kutuphane.dto.BorrowsDTO;
-import com.example.backend_kutuphane.entities.Borrows;
-import com.example.backend_kutuphane.entities.Users;
-import com.example.backend_kutuphane.entities.Books;
+import com.example.backend_kutuphane.entity.Borrows;
+import com.example.backend_kutuphane.entity.Users;
+import com.example.backend_kutuphane.entity.Books;
 import com.example.backend_kutuphane.services.BorrowsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package com.example.backend_kutuphane.entities;
+package com.example.backend_kutuphane.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

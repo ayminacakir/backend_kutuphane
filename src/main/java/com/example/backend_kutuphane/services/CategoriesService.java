@@ -1,7 +1,7 @@
 
 package com.example.backend_kutuphane.services;
 
-import com.example.backend_kutuphane.entities.Categories;
+import com.example.backend_kutuphane.entity.Categories;
 import com.example.backend_kutuphane.repositories.CategoriesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

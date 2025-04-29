@@ -1,6 +1,6 @@
 package com.example.backend_kutuphane.dto;
 
-import com.example.backend_kutuphane.entities.enums.States;
+import com.example.backend_kutuphane.entity.enums.State;
 
 public class BooksDTO {
 
@@ -8,10 +8,10 @@ public class BooksDTO {
     private String title;
     private String author;
     private String categoryName;
-    private States states;
+    private State states;
 
     // Parametreli constructor
-    public BooksDTO(Long id, String title, String author, String categoryName, States states) {
+    public BooksDTO(Long id, String title, String author, String categoryName, State states) {
         this.id = id;
         this.title = title;
         this.author = author;
@@ -52,11 +52,11 @@ public class BooksDTO {
         this.categoryName = categoryName;
     }
 
-    public States getStates() {
+    public State getStates() {
         return states;
     }
 
-    public void setStates(States states) {
+    public void setStates(State states) {
         this.states = states;
     }
 }

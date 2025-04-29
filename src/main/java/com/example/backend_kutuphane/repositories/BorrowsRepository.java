@@ -1,8 +1,8 @@
 package com.example.backend_kutuphane.repositories;
 
-import com.example.backend_kutuphane.entities.Books;
-import com.example.backend_kutuphane.entities.Borrows;
-import com.example.backend_kutuphane.entities.Users;
+import com.example.backend_kutuphane.entity.Books;
+import com.example.backend_kutuphane.entity.Borrows;
+import com.example.backend_kutuphane.entity.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

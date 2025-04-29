@@ -1,6 +1,6 @@
 package com.example.backend_kutuphane.repositories;
 
-import com.example.backend_kutuphane.entities.Reservations;
+import com.example.backend_kutuphane.entity.Reservations;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package com.example.backend_kutuphane.entities;
+package com.example.backend_kutuphane.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -6,21 +6,22 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@NoArgsConstructor
-@AllArgsConstructor
+import java.time.LocalDate;
+
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
-public class Fines {
+public class Reservations {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @ManyToOne
-    @JoinColumn(name = "user_id")  // User ile ilişkilendirme
     private Users user;
+    @ManyToOne
+    private Books book;
 
-    private boolean paid;
-
-
+    private LocalDate reservationDate;
+    private boolean active;
 }
