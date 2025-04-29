@@ -1,5 +1,6 @@
 package com.example.backend_kutuphane.services.user;
 
+import com.example.backend_kutuphane.entity.Users;
 import com.example.backend_kutuphane.repositories.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -11,4 +12,9 @@ public class UserService {
     private final UserRepository usersRepository;
 
 
+
+    public Users saveUser(Users user) {
+
+
+    }
 }
