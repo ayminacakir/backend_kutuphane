@@ -5,10 +5,9 @@ import com.example.backend_kutuphane.services.user.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/user")
@@ -28,21 +27,27 @@ public class UserController {
         return ResponseEntity.ok(usersService.saveUser(user));
     }
 
-    // deleteUser  ^******************************
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
+        usersService.deleteUser(id);
+        return ResponseEntity.noContent().build();
+    }
 
 
-    // updateUser  ^******************************
+    @PutMapping("/{id}")
+    public ResponseEntity<Users> updateUser(@PathVariable Long id, @RequestBody Users updatedUser) {
+        return ResponseEntity.ok(usersService.updateUser(id, updatedUser));
+    }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Users> getUserById(@PathVariable Long id) {
+        return ResponseEntity.ok(usersService.getUserById(id));
+    }
 
-    // getUserById  ^******************************
-
-
-    // getAllUsers  ^******************************
-
-
-
-
-
+    @GetMapping
+    public ResponseEntity<List<Users>> getAllUsers() {
+        return ResponseEntity.ok(usersService.getAllUsers());
+    }
 
 
 
