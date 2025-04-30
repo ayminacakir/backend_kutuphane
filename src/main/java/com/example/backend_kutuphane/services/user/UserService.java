@@ -21,7 +21,7 @@ public class UserService {
     }
     public Users updateUser(Long id, Users updatedUser) {
         Users user = userRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("User not found"));
+                .orElseThrow(() -> new RuntimeException(" Kullanıcı bulunamadı"));
         user.setName(updatedUser.getName());
         user.setEmail(updatedUser.getEmail());
         user.setPassword(updatedUser.getPassword());
@@ -31,11 +31,10 @@ public class UserService {
     }
     public Users getUserById(Long id) {
         return userRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("User not found"));
+                .orElseThrow(() -> new RuntimeException("Kullanıcı bulunamadı"));
     }
     public List<Users> getAllUsers() {
         return userRepository.findAll();
     }
-
 
 }

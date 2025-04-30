@@ -19,11 +19,11 @@ public class UserController {
     // Bu sınıfın içeriği, uygulamanızın gereksinimlerine göre değişebilir.
 
 
-    private UserService usersService;
+    private final UserService usersService;
 
     @PostMapping("/register")   // http://localhost:8081/user/register
     @ResponseStatus(HttpStatus.CREATED)
-    public ResponseEntity<Users> saveUser(Users user) {
+    public ResponseEntity<Users> saveUser(@RequestBody Users user) {
         return ResponseEntity.ok(usersService.saveUser(user));
     }
 
